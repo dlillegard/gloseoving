@@ -9,7 +9,7 @@ const files = {
   '/gloser.js': ['gloser.js', 'text/javascript; charset=utf-8'],
   '/lagring.js': ['lagring.js', 'text/javascript; charset=utf-8'],
   '/gloseoving.svg': ['gloseoving.svg', 'image/svg+xml'],
-  '/favicon.svg': ['favicon.svg', 'image/svg+xml']
+  '/logo-symbol.svg': ['logo-symbol.svg', 'image/svg+xml']
 };
 const server = createServer(async (req, res) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') {

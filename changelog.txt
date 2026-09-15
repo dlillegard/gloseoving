@@ -1,6 +1,21 @@
 GLOSEØVING – ENDRINGSLOGG
 Nyeste utgave står øverst. Utgaver før Git tilhører 1.x.
 
+2.0.5 – 2026-09-15
+------------------
+- Erstattet Superlærer-illustrasjonen i grensesnittet med et nytt, håndtegnet
+  SVG-symbol basert på bokstaven G og et hakemerke.
+- Bruker det samme symbolet i toppteksten, utfordringskortet og som favicon.
+- Tilpasset størrelse, bakgrunn og luft rundt symbolet på bred og smal skjerm.
+- Beholdt den opprinnelige illustrasjonen i repositoryet som historikk.
+- Fjernet det utgåtte faviconet og oppdatert lokal server og README.md med den
+  nye offentlige ressursen.
+- Oppdatert cache-parametrene for stilark og favicon til 2.0.5.
+- Økt versjonsnummeret i package.json og sidefoten til 2.0.5.
+Kontroll: Versjonssamsvar, SVG-struktur og git diff --check kontrollert.
+Grensesnittet er kontrollert visuelt i nettleseren på bred og smal skjerm.
+Ingen øvingslogikk er endret; funksjonstestene er ikke kjørt på nytt.
+
 2.0.4 – 2026-09-15
 ------------------
 - Justert startsidens komposisjon slik at gloselistekortet og utfordringskortet

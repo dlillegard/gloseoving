@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Gloseøving-symbol</title>
+  <desc id="desc">En mørk bokstav G med et gult hakemerke i en mørk sirkel, på en avrundet gul flate.</desc>
+
+  <rect width="512" height="512" rx="116" fill="#f9c443"/>
+
+  <!-- G-en er tegnet med én åpen, avrundet linje og er derfor ikke avhengig av en skrifttype. -->
+  <path
+    d="M340 160c-31-34-75-53-121-49-72 6-127 67-127 139 0 78 63 141 141 141 43 0 82-19 108-50v-84h-96"
+    fill="none"
+    stroke="#202520"
+    stroke-width="58"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Hakemerket ligger som et eget kvalitetsstempel og kan leses også i små størrelser. -->
+  <circle cx="378" cy="368" r="87" fill="#202520"/>
+  <path
+    d="m330 368 31 32 66-73"
+    fill="none"
+    stroke="#f9c443"
+    stroke-width="30"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

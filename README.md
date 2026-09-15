@@ -54,8 +54,7 @@ styles.css
 app.js
 gloser.js
 lagring.js
-gloseoving.svg
-favicon.svg
+logo-symbol.svg
 ```
 
 Relative filstier gjør at siden også fungerer i en undermappe. Ingen Node-prosess, database eller serverkode er nødvendig i produksjon. Ikke publiser `.git`, tester eller utviklingsfiler. Sørg for at JavaScript serveres med riktig MIME-type og at HTML revalideres ved nye utgivelser.
@@ -69,6 +68,8 @@ Innlimt tekst lagres automatisk i `localStorage` i den aktuelle nettleseren. Glo
 - `app.js`: visninger, skjemaer, fokus og tilbakemeldinger.
 - `gloser.js`: rene funksjoner for tolking, svarregler og tilstander.
 - `lagring.js`: feiltolerant nettleserlagring.
+- `logo-symbol.svg`: felles symbol i topptekst, utfordringskort og favicon.
+- `gloseoving.svg`: den opprinnelige Superlærer-illustrasjonen, bevart som historikk og ikke brukt av nettsiden.
 - `server.mjs`: lokal forhåndsvisning med bare nettstedets offentlige filer.
 
 Utviklet av Daniel Herman Lillegård. Videreført som CC0 fra originalen.
