@@ -6,9 +6,11 @@ En lett nettside i HTML, CSS og JavaScript, uten eksterne avhengigheter, kontoer
 
 - **1.x:** Den opprinnelige utgaven fra før Git, brukt som innbygging i Google Sites.
 - **2.0:** Den nye utgaven i dette repositoryet. Første utgivelse markeres med Git-taggen `v2.0`; tidligere commits her er utviklingen fram mot 2.0.
-- Sidefoten viser `Versjon 2.0`. `package.json` bruker den tilsvarende treleddsformen `2.0.0`.
+- Gjeldende versjon står i sidefoten og i `package.json`. Sidefoten utelater siste ledd når det er null, slik at `2.0.0` vises som `Versjon 2.0`.
 
 Ved kommende utgivelser oppdateres sidefoten og `package.json` sammen, og utgivelsescommiten får en tilsvarende Git-tag. Git-historikken trenger ikke skrives om for å velge versjonsnummer.
+
+`AGENTS.md` beskriver arbeidsreglene, inkludert obligatorisk versjonsøkning og dokumentasjon for hvert ferdige endringssett. `changelog.txt` inneholder endringshistorikken med nyeste utgave øverst.
 
 ## Pedagogisk kjerne
 

@@ -1,0 +1,56 @@
+GLOSEØVING – ENDRINGSLOGG
+Nyeste utgave står øverst. Utgaver før Git tilhører 1.x.
+
+2.0.1 – 2026-09-15
+------------------
+- Opprettet AGENTS.md med arbeidsregler for hele prosjektet.
+- Innført krav om versjonsøkning og dokumentasjon av alle ferdige endringssett,
+  også dokumentasjonsendringer, tester og interne justeringer.
+- Beskrevet sammenhengen mellom package.json, sidefot, endringslogg og Git-tagger.
+- Dokumentert pedagogisk kjerne, case sensitive svar, rekkefølgevalg og tekniske
+  krav, inkludert støtte for direkte åpning av HTML-filen.
+- Opprettet changelog.txt og samlet den kjente historikken fram til versjon 2.0.
+- Oppdatert README.md med henvisning til arbeidsregler og endringslogg.
+- Økt package.json til 2.0.1 og sidefoten til «Versjon 2.0.1».
+Kontroll: Kontrollert versjonssamsvar og git diff --check. Ingen øvingslogikk
+er endret i denne utgaven; funksjonstestene er ikke kjørt på nytt.
+
+2.0 – 2026-09-15
+----------------
+Første utgivelse av nyutviklingen med Git. Tagg: v2.0.
+Endringene nedenfor ble utviklet gjennom flere commits før utgivelsen:
+
+- Initialisert Git-repository med main og lokal forfatteridentitet.
+- Bygget ny mobiltilpasset side i HTML, CSS og JavaScript med den originale
+  logoen, nytt favicon og farger basert på logoen.
+- Delt løsningen i grensesnitt, svar- og rundelogikk og lokal lagring.
+- Lagt til forhåndsvisning av gloser, linjevis validering og eksempelliste.
+- Bevart komma og bindestreker inni ord ved innliming; ugyldige linjer må rettes.
+- Lagt til lokal lagring av gloselista, med videre øving ved lagringsfeil.
+- Innført tydelige visninger for redigering, øving, feiloversikt og fullføring,
+  samt fremdrift, forsøksnummer, tastaturbetjening og automatisk fokus.
+- Bevart kravet om alle gloser riktig på rad. Én feil stopper runden og viser
+  hele lista med grønn hake, rødt kryss og markering av ubesvarte gloser.
+- Vist elevsvar og fasit sammen, med forklaring av artikkel-, bokstav- og stavefeil.
+- Hindret innsending etter feil/fullføring; tomme svar avslutter ikke runden.
+- Lagt til lokal utviklingsserver, README.md, .gitignore og automatiske tester.
+- Rettet direkte filåpning ved å erstatte JavaScript-moduler med vanlige
+  defer-skript. Start-knappen er deaktivert til oppstarten er fullført, og
+  en melding vises dersom skriptene ikke blir lastet.
+- Lagt til bryter for tilfeldig rekkefølge. Standard følger den innlimte lista;
+  tilfeldig modus stokker før hvert forsøk uten å endre originalen.
+- Gjort alle svar case sensitive, også artikler, ord uten artikkel og uttrykk.
+- Vist «Versjon 2.0» i sidefoten mellom krediteringen og «Fri å bruke».
+Kontroll: 14 automatiske tester besto ved siste funksjonsendring. Innliming,
+lagring, feil, omstart, fullføring, stokking og bokstavkontroll ble kontrollert
+i nettleseren; mobilvisning ble kontrollert ved førsteversjonen. Brukeren
+bekreftet at direkte filåpning fungerte i Vivaldi etter rettingen.
+
+1.x – før Git (nøyaktig utgivelsesdato ikke dokumentert)
+------------------------------------------------------
+- Opprinnelig løsning som ren innbyggingskode for Google Sites.
+- Innliming av tysk-norske gloser, øving fra norsk til tysk og krav om å starte
+  på nytt etter én feil, med hele gloselista synlig etter feilen.
+- Original logo og kreditering av Daniel Herman Lillegård; frigitt som CC0.
+- Referansefilen viste versjon 1.01. Full endringshistorikk for 1.x er ikke
+  tilgjengelig i dette Git-repositoryet.
