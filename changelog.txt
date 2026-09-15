@@ -1,6 +1,17 @@
 GLOSEØVING – ENDRINGSLOGG
 Nyeste utgave står øverst. Utgaver før Git tilhører 1.x.
 
+2.0.2 – 2026-09-15
+------------------
+- Flettet inn GitHub-repositoryets opprinnelige commit med CC0-lisensen.
+- Lagt til LICENSE fra GitHub og lisensidentifikatoren CC0-1.0 i package.json.
+- Knyttet prosjektets lokale Git-oppsett til dlillegard/gloseoving med egen
+  deploy key. Privat nøkkel og SSH-oppsett er lokale og ikke versjonert.
+- Bevart begge Git-historikker og eksisterende utgivelsestagger.
+- Økt versjonsnummeret i package.json og sidefoten til 2.0.2.
+Kontroll: GitHub-tilgang, lisensfil, versjonssamsvar og git diff --check
+kontrollert. Ingen øvingslogikk er endret; funksjonstestene er ikke kjørt på nytt.
+
 2.0.1 – 2026-09-15
 ------------------
 - Opprettet AGENTS.md med arbeidsregler for hele prosjektet.
