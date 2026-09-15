@@ -1,5 +1,8 @@
-import { parseWords, createRound, submitAnswer, normalize } from './gloser.js';
-import { loadList, saveList } from './lagring.js';
+(() => {
+'use strict';
+
+const { parseWords, createRound, submitAnswer, normalize } = globalThis.GloseovingCore;
+const { loadList, saveList } = globalThis.GloseovingStorage;
 
 const $ = id => document.getElementById(id);
 const list = $('word-list');
@@ -169,3 +172,7 @@ document.querySelectorAll('.edit-button').forEach(button => button.addEventListe
   showView('editor');
   $('editor-title').focus({ preventScroll: true });
 }));
+
+$('start-button').disabled = false;
+$('boot-status').hidden = true;
+})();

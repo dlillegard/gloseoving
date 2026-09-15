@@ -1,9 +1,12 @@
+(() => {
+'use strict';
+
 /** Spaces and Unicode composition from pasted Classroom text are insignificant. */
-export function normalize(value) {
+function normalize(value) {
   return value.normalize('NFC').trim().replace(/\s+/gu, ' ');
 }
 
-export function parseWords(text) {
+function parseWords(text) {
   const words = [];
   const errors = [];
   text.split(/\r\n|\n|\r/u).forEach((raw, index) => {
@@ -27,7 +30,7 @@ export function parseWords(text) {
   return { words, errors };
 }
 
-export function checkAnswer(answer, expected) {
+function checkAnswer(answer, expected) {
   const given = normalize(answer);
   const correct = normalize(expected);
   if (!given) return { correct: false, reason: 'empty' };
@@ -45,12 +48,12 @@ export function checkAnswer(answer, expected) {
 }
 
 /** A stopped or completed round cannot accept another answer. */
-export function createRound(words, attempt = 1) {
+function createRound(words, attempt = 1) {
   if (!words.length) throw new Error('En runde trenger minst én glose.');
   return { words, attempt, index: 0, phase: 'practice', answer: '', reason: null };
 }
 
-export function submitAnswer(round, answer) {
+function submitAnswer(round, answer) {
   if (round.phase !== 'practice') return round;
   const result = checkAnswer(answer, round.words[round.index].german);
   if (result.reason === 'empty') return round;
@@ -58,3 +61,6 @@ export function submitAnswer(round, answer) {
   const index = round.index + 1;
   return { ...round, index, phase: index === round.words.length ? 'complete' : 'practice' };
 }
+
+globalThis.GloseovingCore = Object.freeze({ normalize, parseWords, checkAnswer, createRound, submitAnswer });
+})();

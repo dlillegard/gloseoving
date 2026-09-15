@@ -8,7 +8,9 @@
   <title>Gloseøving – alle riktig på rad</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js"></script>
+  <script defer src="gloser.js"></script>
+  <script defer src="lagring.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Hopp til innhold</a>
@@ -34,7 +36,8 @@
           <div class="import-meta"><p id="import-status" role="status">Venter på glosene dine</p><button type="button" id="example-button" class="text-button">Prøv med en eksempelliste</button></div>
           <div id="import-errors" class="import-errors" hidden><h2 id="error-heading" tabindex="-1">Se over disse linjene</h2><ul id="error-list"></ul></div>
           <details id="preview" hidden><summary>Se over glosene <span id="preview-count"></span></summary><div id="preview-list" class="word-table"></div></details>
-          <div class="start-area"><button type="submit" id="start-button" class="button primary">Start øving <span aria-hidden="true">→</span></button><span id="storage-note" class="storage-note">Lista huskes i denne nettleseren.</span></div>
+          <p id="boot-status" class="import-errors" role="status">Øvingen lastes. Blir denne meldingen stående, kontroller at JavaScript er tillatt og at alle filene ligger i samme mappe.</p>
+          <div class="start-area"><button type="submit" disabled id="start-button" class="button primary">Start øving <span aria-hidden="true">→</span></button><span id="storage-note" class="storage-note">Lista huskes i denne nettleseren.</span></div>
         </form>
         <aside class="challenge" aria-labelledby="challenge-title">
           <div class="logo-stage"><img src="gloseoving.svg" alt="Gloseøving – Superlærer" width="1083" height="939"></div>

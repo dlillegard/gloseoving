@@ -18,13 +18,15 @@ Bare bindestrek/tankestrek **med mellomrom på begge sider** brukes som skille. 
 
 ## Lokal kjøring
 
-Med Node.js installert:
+Dobbeltklikk `index.html` for å åpne siden direkte i nettleseren. Alle de offentlige filene må ligge i samme mappe. Siden bruker vanlige skript med `defer`, slik at den også virker med `file://`.
+
+Alternativt, med Node.js installert:
 
 ```sh
 npm start
 ```
 
-Åpne http://127.0.0.1:5173. Ingen `npm install` trengs. Bruk en HTTP-server; JavaScript-moduler virker ikke nødvendigvis ved å dobbeltklikke HTML-filen.
+Åpne http://127.0.0.1:5173. Ingen `npm install` trengs.
 
 ```sh
 npm test
@@ -50,7 +52,7 @@ Relative filstier gjør at siden også fungerer i en undermappe. Ingen Node-pros
 
 ## Lokal lagring
 
-Innlimt tekst lagres automatisk i `localStorage` i den aktuelle nettleseren. Gloser og elevsvar sendes ikke til noen tjeneste. Tømming av feltet fjerner den lagrede lista. Nettlesere som blokkerer lagring kan fortsatt bruke øvingen. Fremdrift lagres ikke; en oppdatering går tilbake til gloselista.
+Innlimt tekst lagres automatisk i `localStorage` i den aktuelle nettleseren. Gloser og elevsvar sendes ikke til noen tjeneste. Tømming av feltet fjerner den lagrede lista. Nettlesere som blokkerer lagring kan fortsatt bruke øvingen. Ved direkte filåpning kan lagringen variere mellom nettlesere. HTTP/HTTPS anbefales for stabil lokal lagring. Fremdrift lagres ikke; en oppdatering går tilbake til gloselista.
 
 ## Filer
 

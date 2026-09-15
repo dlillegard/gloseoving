@@ -1,6 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseWords, checkAnswer, createRound, submitAnswer } from '../gloser.js';
+import { readFileSync } from 'node:fs';
+import { Script } from 'node:vm';
+import '../gloser.js';
+const { parseWords, checkAnswer, createRound, submitAnswer } = globalThis.GloseovingCore;
+
+test('nettleserskriptene kan leses som vanlige skript uten modullaster', () => {
+  for (const name of ['gloser.js', 'lagring.js', 'app.js']) {
+    const source = readFileSync(new URL('../' + name, import.meta.url), 'utf8');
+    assert.doesNotThrow(() => new Script(source, { filename: name }));
+  }
+});
 
 test('Classroom-tekst: rekkefølge, CRLF, tomme linjer og tankestrek', () => {
   assert.deepEqual(parseWords('die Katze - katten\r\n\r\ndas Haus – huset').words, [
