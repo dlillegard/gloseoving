@@ -2,6 +2,14 @@
 
 En lett nettside i HTML, CSS og JavaScript, uten eksterne avhengigheter, kontoer eller byggeprosess. Logoen er videreført fra originalen.
 
+## Versjonering
+
+- **1.x:** Den opprinnelige utgaven fra før Git, brukt som innbygging i Google Sites.
+- **2.0:** Den nye utgaven i dette repositoryet. Første utgivelse markeres med Git-taggen `v2.0`; tidligere commits her er utviklingen fram mot 2.0.
+- Sidefoten viser `Versjon 2.0`. `package.json` bruker den tilsvarende treleddsformen `2.0.0`.
+
+Ved kommende utgivelser oppdateres sidefoten og `package.json` sammen, og utgivelsescommiten får en tilsvarende Git-tag. Git-historikken trenger ikke skrives om for å velge versjonsnummer.
+
 ## Pedagogisk kjerne
 
 - Eleven limer inn glosene fra Classroom som `tysk ord - norsk ord`, én per linje.
