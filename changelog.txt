@@ -1,6 +1,17 @@
 GLOSEØVING – ENDRINGSLOGG
 Nyeste utgave står øverst. Utgaver før Git tilhører 1.x.
 
+2.0.3 – 2026-09-15
+------------------
+- Lagt til lenke til prosjektets kildekode på GitHub i sidefoten.
+- Gjort CC0-teksten i sidefoten til en lenke til lisensbeskrivelsen hos
+  Creative Commons.
+- Lenkene åpnes i ny fane og opplyser skjermlesere om dette.
+- Økt versjonsnummeret i package.json og sidefoten til 2.0.3.
+Kontroll: Begge lenkene og plasseringen i sidefoten er kontrollert i nettleseren.
+Versjonssamsvar og git diff --check er kontrollert. Ingen øvingslogikk er endret;
+funksjonstestene er ikke kjørt på nytt.
+
 2.0.2 – 2026-09-15
 ------------------
 - Flettet inn GitHub-repositoryets opprinnelige commit med CC0-lisensen.
