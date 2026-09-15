@@ -1,0 +1,11 @@
+{
+  "name": "gloseoving",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Gloseøving med innliming fra Classroom og alle gloser riktig på rad.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  }
+}

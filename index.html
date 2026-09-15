@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202520">
+  <meta name="description" content="Lim inn glosene fra Classroom og øv på tysk. Klar hele gloselista på rad uten feil.">
+  <title>Gloseøving – alle riktig på rad</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Hopp til innhold</a>
+  <header class="site-header">
+    <div class="wordmark"><span class="brand-mark" aria-hidden="true">G<span>✓</span></span>Gloseøving</div>
+    <span class="language"><span class="german-flag" aria-hidden="true"></span> Vi øver på tysk</span>
+  </header>
+
+  <main id="main">
+    <ol class="steps" aria-label="Steg i øvingen">
+      <li id="step-editor" aria-current="step"><span>01</span> Gloseliste</li>
+      <li id="step-practice"><span>02</span> Øving</li>
+      <li id="step-complete"><span>03</span> Alle riktig</li>
+    </ol>
+
+    <section id="editor-view" aria-labelledby="editor-title">
+      <div class="page-heading"><h1 id="editor-title" tabindex="-1">Hva skal du øve på?</h1><p>Kopier glosene fra Classroom og lim dem inn. Så er du i gang.</p></div>
+      <div class="editor-layout">
+        <form id="editor-form" class="editor-card" novalidate>
+          <div class="field-heading"><label for="word-list">Glosene dine</label><span>Én glose per linje</span></div>
+          <p id="format-help" class="format-help">Skriv <strong>tysk ord - norsk ord</strong>, med mellomrom rundt bindestreken.</p>
+          <textarea id="word-list" rows="5" spellcheck="false" aria-describedby="format-help import-status" placeholder="die Katze - katten&#10;das Haus - huset&#10;lernen - å lære"></textarea>
+          <div class="import-meta"><p id="import-status" role="status">Venter på glosene dine</p><button type="button" id="example-button" class="text-button">Prøv med en eksempelliste</button></div>
+          <div id="import-errors" class="import-errors" hidden><h2 id="error-heading" tabindex="-1">Se over disse linjene</h2><ul id="error-list"></ul></div>
+          <details id="preview" hidden><summary>Se over glosene <span id="preview-count"></span></summary><div id="preview-list" class="word-table"></div></details>
+          <div class="start-area"><button type="submit" id="start-button" class="button primary">Start øving <span aria-hidden="true">→</span></button><span id="storage-note" class="storage-note">Lista huskes i denne nettleseren.</span></div>
+        </form>
+        <aside class="challenge" aria-labelledby="challenge-title">
+          <div class="logo-stage"><img src="gloseoving.svg" alt="Gloseøving – Superlærer" width="1083" height="939"></div>
+          <div class="challenge-copy"><p class="eyebrow">UTFORDRINGEN</p><h2 id="challenge-title">Alle riktig.<br>På rad.</h2><p>Skriv det tyske ordet til hver glose. Målet er å klare hele lista uten feil.</p><div class="rule"><span aria-hidden="true">↻</span><p>Én feil? Da vises hele lista, og du starter på nytt fra første ord.</p></div><p class="small-note">Husk artikkel og stor bokstav i tyske substantiv.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="practice-view" class="practice-view" aria-labelledby="practice-title" hidden>
+      <div class="practice-top"><button type="button" class="text-button edit-button">← Til gloselista</button><span id="attempt-label" class="pill"></span></div>
+      <div class="practice-card">
+        <div class="progress-heading"><span id="progress-label"></span><span id="correct-count"></span></div>
+        <progress id="progress" value="0" max="1" aria-label="Riktige gloser i denne runden"></progress>
+        <p class="eyebrow question-label">HVA ER DET TYSKE ORDET FOR</p>
+        <h1 id="practice-title"></h1>
+        <form id="answer-form" novalidate>
+          <label for="answer">Svaret ditt</label>
+          <input id="answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" lang="de" placeholder="Skriv på tysk …" aria-describedby="answer-help answer-error">
+          <p id="answer-error" class="input-error" role="alert"></p>
+          <div class="answer-actions"><span id="answer-help">Husk artikkel og stor bokstav i substantiv.</span><button class="button primary" type="submit">Sjekk svar <span class="enter-hint" aria-hidden="true">↵</span></button></div>
+        </form>
+        <p id="correct-feedback" class="correct-feedback" role="status"></p>
+      </div>
+      <p class="practice-caption">Ett ord om gangen. Hele lista på rad.</p>
+    </section>
+
+    <section id="result-view" class="result-view" aria-labelledby="result-title" hidden>
+      <div id="result-banner" class="result-banner"><span id="result-symbol" class="result-symbol" aria-hidden="true"></span><div><p id="result-eyebrow" class="eyebrow"></p><h1 id="result-title" tabindex="-1"></h1><p id="result-description"></p></div></div>
+      <div id="answer-comparison" class="answer-comparison" hidden><div><span>DU SKREV</span><p id="submitted-answer" lang="de"></p></div><div><span>RIKTIG SVAR</span><p id="expected-answer" lang="de"></p></div><p id="answer-explanation"></p></div>
+      <div class="result-actions"><button id="retry-button" type="button" class="button primary">Start på nytt <span aria-hidden="true">↻</span></button><button type="button" class="button secondary edit-button">Rediger gloselista</button></div>
+      <div class="overview-card"><div class="overview-heading"><h2>Hele gloselista</h2><span id="overview-count"></span></div><p class="legend"><span class="success-text">✓ Riktig</span><span class="error-text">✕ Feil</span><span>— Ikke besvart</span></p><div id="result-list" class="word-table"></div></div>
+    </section>
+    <noscript><p class="import-errors">Slå på JavaScript i nettleseren for å bruke Gloseøving.</p></noscript>
+  </main>
+  <footer><span>Gloseøving <span class="footer-dot">·</span> Laget av Daniel Herman Lillegård</span><span>Fri å bruke <span class="footer-dot">·</span> CC0</span></footer>
+</body>
+</html>
