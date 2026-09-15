@@ -5,14 +5,14 @@ En lett nettside i HTML, CSS og JavaScript, uten eksterne avhengigheter, kontoer
 ## Pedagogisk kjerne
 
 - Eleven limer inn glosene fra Classroom som `tysk ord - norsk ord`, én per linje.
-- Glosene kommer i samme rekkefølge som i lista, med norsk spørsmål og tysk svar.
+- Glosene kommer som standard i listas rekkefølge. Bryteren «Tilfeldig rekkefølge» stokker alle glosene før hvert forsøk. Spørsmålet er norsk og svaret tysk.
 - Én feil stopper runden og viser **hele** lista: tidligere riktige med grønn hake, feilen med rødt kryss, resten ubesvart.
-- Eleven kan studere lista før «Start på nytt» begynner fra første glose. Ingen hopping, stokking eller repetisjon av bare feil.
+- Eleven kan studere hele lista i forsøksrekkefølge før «Start på nytt» begynner en full ny runde. I tilfeldig modus stokkes lista på nytt. Innlimt tekst endres aldri. Ingen hopping eller repetisjon av bare feil.
 - Målet er alle glosene riktig på rad. Et tomt svar er ikke et innsendt svar og avslutter ikke runden.
 
 ## Svarregler og innliming
 
-Artiklene `der`, `die`, `das` må være riktige. Artikkelens forbokstav kan være stor eller liten; resten av substantivuttrykket må samsvare med fasiten og begynne med stor bokstav. Andre ord sammenlignes uten hensyn til store/små bokstaver. Tyske spesialtegn er betydningsfulle. Ekstra mellomrom og forskjeller i Unicode-sammensetning ignoreres.
+Alle svar må samsvare med fasitens store og små bokstaver, også artikler, enkeltord uten artikkel og uttrykk. `die Katze` godtas bare med samme bokstavbruk; `Die Katze` og `die katze` avvises. Tyske spesialtegn er betydningsfulle. Ekstra mellomrom og forskjeller i Unicode-sammensetning ignoreres fortsatt.
 
 Bare bindestrek/tankestrek **med mellomrom på begge sider** brukes som skille. Komma og bindestreker inni ord bevares. Ugyldige eller tvetydige linjer må rettes før start; de droppes aldri stille. Fasit må være skrevet riktig av læreren. Alternative tyske svar tolkes ikke automatisk fra komma eller skråstrek.
 

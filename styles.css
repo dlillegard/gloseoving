@@ -1077,3 +1077,39 @@ footer {
     scroll-behavior:auto!important;
   }
 }
+
+/* Native checkbox semantics, styled as a compact keyboard-accessible switch. */
+.order-setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.order-setting label { font-size: 14px; font-weight: 650; cursor: pointer; }
+.order-setting p { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 5px; }
+.order-setting input {
+  appearance: none;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 26px;
+  padding: 3px;
+  margin: 0;
+  border: 1px solid #79816f;
+  border-radius: 20px;
+  background: #e2e6dd;
+  cursor: pointer;
+}
+.order-setting input::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform .15s;
+}
+.order-setting input:checked { background: var(--yellow); border-color: #826008; }
+.order-setting input:checked::before { transform: translateX(18px); }

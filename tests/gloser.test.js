@@ -29,7 +29,7 @@ test('rapporterer ugyldige, tomme og tvetydige linjer med linjenummer', () => {
   assert.deepEqual(result.errors.map(error => error.line), [2, 3, 4, 5]);
 });
 test('substantiv krever riktig artikkel og stor bokstav', () => {
-  assert.equal(checkAnswer('Die Katze', 'die Katze').correct, true);
+  assert.equal(checkAnswer('Die Katze', 'die Katze').reason, 'capitalization');
   assert.equal(checkAnswer('der Katze', 'die Katze').reason, 'article');
   assert.equal(checkAnswer('Katze', 'die Katze').reason, 'article');
   assert.equal(checkAnswer('die katze', 'die Katze').reason, 'capitalization');
@@ -39,8 +39,8 @@ test('samme substantivregler gjelder sammensatte uttrykk', () => {
   assert.equal(checkAnswer('das Rote Kreuz', 'das Rote Kreuz').correct, true);
   assert.equal(checkAnswer('das rote Kreuz', 'das Rote Kreuz').correct, false);
 });
-test('andre ord ignorerer store bokstaver, men ikke spesialtegn', () => {
-  assert.equal(checkAnswer('LERNEN', 'lernen').correct, true);
+test('alle ord skiller mellom store og små bokstaver og spesialtegn', () => {
+  assert.equal(checkAnswer('LERNEN', 'lernen').correct, false);
   assert.equal(checkAnswer('schon', 'schön').correct, false);
 });
 test('normaliserer mellomrom, nonbreaking space og Unicode', () => {
@@ -74,4 +74,25 @@ test('fullføring kan ikke sende inn flere svar eller gå ut av lista', () => {
 test('én glose fungerer og tomme runder avvises', () => {
   assert.equal(submitAnswer(createRound([words[0]]), 'die Katze').phase, 'complete');
   assert.throws(() => createRound([]));
+});
+
+test('substantiv uten artikkel og uttrykk er også case sensitive', () => {
+  assert.equal(checkAnswer('angst haben', 'Angst haben').reason, 'capitalization');
+  assert.equal(checkAnswer('Angst haben', 'Angst haben').correct, true);
+  assert.equal(checkAnswer('Katze', 'Katze').correct, true);
+  assert.equal(checkAnswer('katze', 'Katze').correct, false);
+});
+test('tilfeldige runder bevarer alle gloser og originalen, også ved omstart', () => {
+  const original = [...words, { german: 'das Haus', norwegian: 'huset' }];
+  const round = createRound(original, 1, true, () => 0);
+  assert.deepEqual(round.words, [original[1], original[2], original[0]]);
+  assert.deepEqual(round.sourceWords, original);
+  assert.notEqual(round.words, original);
+  const failed = submitAnswer(round, 'feil');
+  assert.equal(failed.phase, 'failed');
+  const retry = createRound(failed.sourceWords, 2, failed.randomOrder, () => 0.99);
+  assert.deepEqual(retry.words, original);
+  assert.equal(retry.index, 0);
+  assert.equal(retry.attempt, 2);
+  assert.equal(createRound([words[0]], 1, true).words.length, 1);
 });

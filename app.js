@@ -86,7 +86,7 @@ function showView(view) {
 
 function showQuestion(feedback = '') {
   showView('practice');
-  $('attempt-label').textContent = `Forsøk ${round.attempt}`;
+  $('attempt-label').textContent = `Forsøk ${round.attempt} · ${round.randomOrder ? 'Tilfeldig rekkefølge' : 'Listas rekkefølge'}`;
   $('progress-label').textContent = `Ord ${round.index + 1} av ${round.words.length}`;
   $('correct-count').textContent = `${round.index} riktig på rad`;
   $('progress').max = round.words.length;
@@ -116,7 +116,7 @@ function showResult() {
     $('expected-answer').textContent = round.words[round.index].german;
     $('answer-explanation').textContent = {
       article: 'Husk riktig artikkel foran substantivet: der, die eller das.',
-      capitalization: 'Sjekk store og små bokstaver. Tyske substantiv skal ha stor forbokstav.',
+      capitalization: 'Store og små bokstaver må være som i fasiten. Husk stor forbokstav i tyske substantiv.',
       spelling: 'Sammenlign svaret ditt med fasiten. Sjekk stavemåten og eventuelle tegn.'
     }[round.reason];
   }
@@ -126,6 +126,11 @@ function showResult() {
   $('result-title').focus({ preventScroll: true });
 }
 
+$('random-order').addEventListener('change', () => {
+  $('order-help').textContent = $('random-order').checked
+    ? 'Glosene stokkes før hvert forsøk.'
+    : 'Glosene kommer i samme rekkefølge som i lista.';
+});
 list.value = loadList();
 updateImport();
 list.addEventListener('input', () => { updateImport(); persist(); });
@@ -146,7 +151,7 @@ $('editor-form').addEventListener('submit', event => {
     return;
   }
   persist();
-  round = createRound(parsed.words);
+  round = createRound(parsed.words, 1, $('random-order').checked);
   showQuestion();
 });
 $('answer-form').addEventListener('submit', event => {
@@ -164,7 +169,7 @@ $('answer-form').addEventListener('submit', event => {
 });
 $('retry-button').addEventListener('click', () => {
   if (!round || round.phase === 'practice') return;
-  round = createRound(round.words, round.attempt + 1);
+  round = createRound(round.sourceWords, round.attempt + 1, round.randomOrder);
   showQuestion();
 });
 document.querySelectorAll('.edit-button').forEach(button => button.addEventListener('click', () => {

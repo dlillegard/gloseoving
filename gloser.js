@@ -34,23 +34,31 @@ function checkAnswer(answer, expected) {
   const given = normalize(answer);
   const correct = normalize(expected);
   if (!given) return { correct: false, reason: 'empty' };
+  if (given === correct) return { correct: true };
+  if (given.toLocaleLowerCase('de') === correct.toLocaleLowerCase('de')) {
+    return { correct: false, reason: 'capitalization' };
+  }
   const noun = /^(der|die|das)\s+(.+)$/iu.exec(correct);
-  if (!noun) return { correct: given.toLocaleLowerCase('de') === correct.toLocaleLowerCase('de'), reason: 'spelling' };
   const parts = /^(\S+)\s+(.+)$/u.exec(given);
-  if (!parts || parts[1].toLocaleLowerCase('de') !== noun[1].toLocaleLowerCase('de')) {
+  if (noun && (!parts || parts[1].toLocaleLowerCase('de') !== noun[1].toLocaleLowerCase('de'))) {
     return { correct: false, reason: 'article' };
   }
-  const word = parts[2];
-  const expectedWord = noun[2];
-  if (word === expectedWord && word[0] === word[0].toLocaleUpperCase('de')) return { correct: true };
-  if (word.toLocaleLowerCase('de') === expectedWord.toLocaleLowerCase('de')) return { correct: false, reason: 'capitalization' };
   return { correct: false, reason: 'spelling' };
 }
 
 /** A stopped or completed round cannot accept another answer. */
-function createRound(words, attempt = 1) {
+function createRound(words, attempt = 1, randomOrder = false, random = Math.random) {
   if (!words.length) throw new Error('En runde trenger minst én glose.');
-  return { words, attempt, index: 0, phase: 'practice', answer: '', reason: null };
+  const sourceWords = [...words];
+  const orderedWords = [...words];
+  if (randomOrder) {
+    // Fisher–Yates: shuffle a copy so the pasted list is never changed.
+    for (let i = orderedWords.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      [orderedWords[i], orderedWords[j]] = [orderedWords[j], orderedWords[i]];
+    }
+  }
+  return { words: orderedWords, sourceWords, randomOrder, attempt, index: 0, phase: 'practice', answer: '', reason: null };
 }
 
 function submitAnswer(round, answer) {

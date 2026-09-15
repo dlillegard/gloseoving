@@ -36,12 +36,13 @@
           <div class="import-meta"><p id="import-status" role="status">Venter på glosene dine</p><button type="button" id="example-button" class="text-button">Prøv med en eksempelliste</button></div>
           <div id="import-errors" class="import-errors" hidden><h2 id="error-heading" tabindex="-1">Se over disse linjene</h2><ul id="error-list"></ul></div>
           <details id="preview" hidden><summary>Se over glosene <span id="preview-count"></span></summary><div id="preview-list" class="word-table"></div></details>
+          <div class="order-setting"><div><label for="random-order">Tilfeldig rekkefølge</label><p id="order-help">Glosene kommer i samme rekkefølge som i lista.</p></div><input type="checkbox" role="switch" id="random-order" aria-describedby="order-help"></div>
           <p id="boot-status" class="import-errors" role="status">Øvingen lastes. Blir denne meldingen stående, kontroller at JavaScript er tillatt og at alle filene ligger i samme mappe.</p>
           <div class="start-area"><button type="submit" disabled id="start-button" class="button primary">Start øving <span aria-hidden="true">→</span></button><span id="storage-note" class="storage-note">Lista huskes i denne nettleseren.</span></div>
         </form>
         <aside class="challenge" aria-labelledby="challenge-title">
           <div class="logo-stage"><img src="gloseoving.svg" alt="Gloseøving – Superlærer" width="1083" height="939"></div>
-          <div class="challenge-copy"><p class="eyebrow">UTFORDRINGEN</p><h2 id="challenge-title">Alle riktig.<br>På rad.</h2><p>Skriv det tyske ordet til hver glose. Målet er å klare hele lista uten feil.</p><div class="rule"><span aria-hidden="true">↻</span><p>Én feil? Da vises hele lista, og du starter på nytt fra første ord.</p></div><p class="small-note">Husk artikkel og stor bokstav i tyske substantiv.</p></div>
+          <div class="challenge-copy"><p class="eyebrow">UTFORDRINGEN</p><h2 id="challenge-title">Alle riktig.<br>På rad.</h2><p>Skriv det tyske ordet til hver glose. Målet er å klare hele lista uten feil.</p><div class="rule"><span aria-hidden="true">↻</span><p>Én feil? Da vises hele lista, og du starter på nytt fra første ord.</p></div><p class="small-note">Svaret må ha samme store og små bokstaver som fasiten. Husk artikkel og stor forbokstav i substantiv.</p></div>
         </aside>
       </div>
     </section>
@@ -57,7 +58,7 @@
           <label for="answer">Svaret ditt</label>
           <input id="answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" lang="de" placeholder="Skriv på tysk …" aria-describedby="answer-help answer-error">
           <p id="answer-error" class="input-error" role="alert"></p>
-          <div class="answer-actions"><span id="answer-help">Husk artikkel og stor bokstav i substantiv.</span><button class="button primary" type="submit">Sjekk svar <span class="enter-hint" aria-hidden="true">↵</span></button></div>
+          <div class="answer-actions"><span id="answer-help">Store og små bokstaver må være som i fasiten.</span><button class="button primary" type="submit">Sjekk svar <span class="enter-hint" aria-hidden="true">↵</span></button></div>
         </form>
         <p id="correct-feedback" class="correct-feedback" role="status"></p>
       </div>
