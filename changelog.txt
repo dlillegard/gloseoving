@@ -1,6 +1,22 @@
 GLOSEØVING – ENDRINGSLOGG
 Nyeste utgave står øverst. Utgaver før Git tilhører 1.x.
 
+2.0.4 – 2026-09-15
+------------------
+- Justert startsidens komposisjon slik at gloselistekortet og utfordringskortet
+  begynner på samme horisontale linje.
+- Gjort utfordringskortet litt smalere, slik at arbeidsflaten får tydeligere
+  visuell prioritet.
+- Gjort startknappen bredere og redusert tomrommet før sidefoten.
+- Samlet versjon, lisens og GitHub-lenke i én gruppe i sidefoten.
+- Bevart den responsive énkolonnevisningen på små skjermer.
+- Rettet mellomrommet i «Alle riktig. På rad.» når overskriften vises på én
+  linje på mindre skjermer.
+- Økt versjonsnummeret i package.json og sidefoten til 2.0.4.
+Kontroll: Versjonssamsvar og git diff --check kontrollert. Grensesnittet er
+kontrollert visuelt i nettleseren på bred og smal skjerm. Ingen øvingslogikk er
+endret; funksjonstestene er ikke kjørt på nytt.
+
 2.0.3 – 2026-09-15
 ------------------
 - Lagt til lenke til prosjektets kildekode på GitHub i sidefoten.

@@ -326,6 +326,10 @@ textarea::placeholder {
   flex-wrap:wrap;
 }
 
+.start-area .button {
+  min-width:220px;
+}
+
 .button {
   min-height:48px;
   border:1px solid transparent;
@@ -848,7 +852,7 @@ input[aria-invalid=true] {
 
 footer {
   border-top:1px solid var(--line);
-  margin-top:60px;
+  margin-top:42px;
   padding:24px 0 28px;
   display:flex;
   justify-content:space-between;
@@ -858,16 +862,19 @@ footer {
   line-height:1.6;
 }
 
+.footer-meta {
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
 .footer-dot {
   margin:0 5px;
 }
 
 @media(min-width:1000px) {
   .editor-layout {
-    grid-template-columns:minmax(0,1fr) 320px;
-  }
-  .challenge {
-    margin-top:-82px;
+    grid-template-columns:minmax(0,1fr) 300px;
   }
   textarea {
     min-height:200px;
@@ -1014,6 +1021,10 @@ footer {
     margin-top:38px;
     flex-direction:column;
     gap:3px;
+  }
+  .footer-meta {
+    gap:14px;
+    flex-wrap:wrap;
   }
 }
 
